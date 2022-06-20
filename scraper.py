@@ -21,4 +21,10 @@ email.send_keys(credentials.email)
 password.send_keys(credentials.password)
 password.submit()
 
-time.sleep(60)
+time.sleep(5)
+
+driver.get("https://www.facebook.com/groups/235385084142732")
+
+for i in range(20):
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+    time.sleep(3)
