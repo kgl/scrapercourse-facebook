@@ -3,8 +3,14 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import time
 import credentials
+from selenium.webdriver.chrome.options import Options
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+
+options = Options()
+options.add_argument("--disable-notifications")
+
+driver = webdriver.Chrome(
+    ChromeDriverManager().install(), chrome_options=options)
 
 driver.get("https://www.facebook.com/")
 
